@@ -1,0 +1,33 @@
+.kasa-header{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.logo{
+    width: 210px;
+    height: 68px;
+}
+
+.kasa-navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.nav-links{
+    display: flex;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 24px;
+    gap: 60px;
+}
+
+.nav-links .link{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links .link:hover{
+    text-decoration: underline;
+}

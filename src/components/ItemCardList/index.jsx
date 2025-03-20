@@ -1,6 +1,6 @@
 import './ItemCardList.scss'
 import { NavLink } from "react-router-dom";
-import logementList from '../../database/logements.json'
+// import logementList from '../../database/logements.json'
 import useFetch from '../../hooks/usefetch.jsx';
 
 function ItemCardList(){

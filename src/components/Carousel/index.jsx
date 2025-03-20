@@ -1,10 +1,7 @@
 import { useState } from "react"
 import "./Carousel.scss";
 
-function Carousel({pictures}) {
-    console.log("Componet Carousel ",pictures);
-    console.log(pictures.length);
-    
+function Carousel({pictures}) {   
     const [currentSlide, setCurrentSlide] = useState(0);
     
     const nextSlide = () => {
@@ -13,7 +10,7 @@ function Carousel({pictures}) {
     const prevSlide = () => {
         setCurrentSlide((prevSlide) => prevSlide === 0 ? pictures.length - 1 : prevSlide - 1);
     }
-    console.log("Index current slide",pictures[currentSlide]);
+    // console.log("Index current slide",pictures[currentSlide]);
     
     return (
         <section className="carousel">

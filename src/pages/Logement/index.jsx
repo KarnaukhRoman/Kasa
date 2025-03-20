@@ -9,7 +9,7 @@ import Rating from '../../components/Rating';
 function Logement(){
     const { id } = useParams();
     const logement = listObjects.find((logement) => logement.id === id);
-    console.log("Page logement",logement);
+    // console.log("Page logement",logement);
 
     if (!logement) return <Page404 />;
     
@@ -20,7 +20,7 @@ function Logement(){
                 <div className='first'>
                     <h2 className="title-logement">{logement.title}</h2>
                     <p className="location-logement">{logement.location}</p>
-                    {logement.tags.map((tag)=><div className='tag-logement'>{tag}</div>)}
+                    {logement.tags.map((tag, index)=><div className='tag-logement' key={tag+index}>{tag}</div>)}
                 </div>
                 <div className='second'>
                     <div className='host-name'>

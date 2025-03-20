@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 // import { useLocation } from 'react-router-dom'
-import './index.css'
+import './index.scss'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Propos from './pages/Propos'
 import Logement from './pages/Logement'
 import Page404 from './pages/Page404'
+import About from './pages/About'
 
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
     <Header />
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/propos' element={<Propos />}/>
-        <Route path='/logement' element={<Logement />} />
+        <Route path='/propos' element={<About />}/>
+        <Route path="/logement/:id" element={<Logement />} />
         <Route path='*' element={<Page404 />} />
       </Routes>
     <Footer />

@@ -1,0 +1,12 @@
+.hebergements {
+    margin-top: 20px;
+    background-color: rgba(246, 246, 246, 1);
+    border-radius: 25px;
+    padding: 25px;
+
+    @media (max-width: 767px) {
+        background-color: white;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+}

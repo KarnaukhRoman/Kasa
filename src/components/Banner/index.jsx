@@ -1,4 +1,4 @@
-import './Banner.css'
+import './Banner.scss'
 function Banner({imageSrc, altText, bannerText}){
     return (
         <div className="kasa-banner">

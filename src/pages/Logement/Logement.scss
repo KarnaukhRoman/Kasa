@@ -1,0 +1,108 @@
+.title-logement{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    color: rgba(255, 96, 96, 1);
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+}
+
+.location-logement{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 10px;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+
+}
+
+.tag-logement{
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgba(255, 96, 96, 1);
+    padding: 5px 30px;
+    margin: 20px 10px 0 0;
+
+    @media (max-width: 768px) {
+        font-size: 10px;
+        padding: 5px 15px;
+        border-radius: 5px;
+        // margin: 15px 10px 10px 0;
+        margin: 10px 10px 0 0;
+    }
+}
+
+.info-logement {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width:767px) {
+        flex-wrap: wrap;
+    }
+}
+.second {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    p{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        color: rgba(255, 96, 96, 1);
+        text-align: right;
+    }
+    @media (max-width: 767px) {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+
+            width: 100%;
+
+            p{
+                font-size: 12px;
+                margin: 0;
+            }
+            img{
+                width: 32px;
+                height: 32px;
+            }
+    }
+}
+
+.host-name{
+    display: flex;
+    align-items: center; 
+    width: 165px;
+    gap: 10px;
+    align-self: center;
+    @media (max-width: 767px) {
+     justify-content: right;
+     width: 100px;
+    }
+}
+.host-img{
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+}
+.droplist-container{
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0 40px 0;
+    gap: 70px;
+    @media (max-width: 767px) {
+        flex-direction: column;
+        padding: 10px 0;
+        gap: 0;
+    }    
+}

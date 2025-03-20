@@ -1,4 +1,4 @@
-import './Home.css'
+import './Home.scss'
 import Banner from "../../components/Banner";
 import ItemCardList from "../../components/ItemCardList/index.jsx";
 
@@ -10,7 +10,7 @@ function Home(){
         altText="Home Banner"
         bannerText="Chez vous, partout et ailleurs" 
         ></Banner>
-        <section class="hebergements">
+        <section className="hebergements">
             <ItemCardList />
         </section>
     </main>

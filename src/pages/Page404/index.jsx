@@ -1,4 +1,4 @@
-import './Page404.css';
+import './Page404.scss';
 function Page404(){
     return (
        <main>

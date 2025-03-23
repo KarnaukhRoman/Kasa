@@ -1,4 +1,3 @@
-import './Logement.scss';
 import { useParams } from "react-router-dom";
 import listObjects from "../../database/logements.json";
 // import { aboutList } from "../../database/about";
@@ -14,28 +13,31 @@ function Logement(){
     if (!logement) return <Page404 />;
     
     return (
-       <main>
-            <Carousel pictures={logement.pictures} />
-            <section className='info-logement'>
-                <div className='first'>
-                    <h2 className="title-logement">{logement.title}</h2>
-                    <p className="location-logement">{logement.location}</p>
-                    {logement.tags.map((tag, index)=><div className='tag-logement' key={tag+index}>{tag}</div>)}
+        <main>
+        <Carousel pictures={logement.pictures} />
+        <section className="info-logement">
+            <div className="info-logement__first">
+                <h2 className="info-logement__title">{logement.title}</h2>
+                <p className="info-logement__location">{logement.location}</p>
+                <div className="info-logement__tags">
+                    {logement.tags.map((tag, index) => (
+                        <div className="info-logement__tag" key={tag + index}>{tag}</div>
+                    ))}
                 </div>
-                <div className='second'>
-                    <div className='host-name'>
-                        <p>{logement.host.name}</p>
-                        <img className='host-img'src={logement.host.picture} alt={logement.host.name} />
-                    </div>
-                    <Rating rating={Number(logement.rating)}/>
+            </div>
+            <div className="info-logement__second">
+                <div className="info-logement__host">
+                    <p className="info-logement__host-name">{logement.host.name}</p>
+                    <img className="info-logement__host-img" src={logement.host.picture} alt={logement.host.name} />
                 </div>
-                </section>
-                <div className='droplist-container'>
-                    <ComboBox title='Description' content={logement.description}/>
-                    <ComboBox title='Équipements' content={logement.equipments}/>
-                </div>
-            
-       </main>
+                <Rating rating={Number(logement.rating)} />
+            </div>
+        </section>
+        <div className="droplist-container">
+            <ComboBox title="Description" content={logement.description} />
+            <ComboBox title="Équipements" content={logement.equipments} />
+        </div>
+    </main>
     );
 }
 export default Logement;

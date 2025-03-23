@@ -10,10 +10,6 @@ import About from './pages/About'
 
 
 function App() {
-  // const location = useLocation();
-  // const bannerImage = location.pathname === '/propos'
-  //   ? '/src/assets/banner2.svg' 
-  //   : '/src/assets/banner1.svg' 
   return (
     <>
     <Header />

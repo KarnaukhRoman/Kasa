@@ -1,108 +1,111 @@
-.title-logement{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 36px;
-    color: rgba(255, 96, 96, 1);
-
-    @media (max-width: 768px) {
-        font-size: 18px;
-    }
-}
-
-.location-logement{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    margin-top: 10px;
-
-    @media (max-width: 768px) {
-        font-size: 14px;
-    }
-
-}
-
-.tag-logement{
-    display: inline-block;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    color: white;
-    border-radius: 10px;
-    background-color: rgba(255, 96, 96, 1);
-    padding: 5px 30px;
-    margin: 20px 10px 0 0;
-
-    @media (max-width: 768px) {
-        font-size: 10px;
-        padding: 5px 15px;
-        border-radius: 5px;
-        // margin: 15px 10px 10px 0;
-        margin: 10px 10px 0 0;
-    }
-}
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins.scss' as *;
 
 .info-logement {
     display: flex;
     justify-content: space-between;
-    @media (max-width:767px) {
-        flex-wrap: wrap;
+
+    &__title {
+        @include text-style(36px, 500, $main-color);
     }
-}
-.second {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    p{
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 500;
-        font-size: 18px;
-        color: rgba(255, 96, 96, 1);
+
+    &__location {
+        @include text-style(18px, 500, black);
+        margin-top: 10px;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    &__tag {
+        display: inline-block;
+        @include text-style(14px, 700, white);
+        border-radius: 10px;
+        background-color: $main-color;
+        padding: 5px 30px;
+    }
+
+    &__second {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    &__host {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__host-name {
+        @include text-style(18px, 500, $main-color);
         text-align: right;
     }
-    @media (max-width: 767px) {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
 
-            width: 100%;
-
-            p{
-                font-size: 12px;
-                margin: 0;
-            }
-            img{
-                width: 32px;
-                height: 32px;
-            }
+    &__host-img {
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;
     }
 }
 
-.host-name{
-    display: flex;
-    align-items: center; 
-    width: 165px;
-    gap: 10px;
-    align-self: center;
-    @media (max-width: 767px) {
-     justify-content: right;
-     width: 100px;
-    }
-}
-.host-img{
-    border-radius: 50%;
-    width: 65px;
-    height: 65px;
-}
-.droplist-container{
+.droplist-container {
     display: flex;
     flex-direction: row;
     padding: 20px 0 40px 0;
     gap: 70px;
-    @media (max-width: 767px) {
+}
+
+// Медіа-запити
+@media (max-width: 768px) {
+    .info-logement {
+        flex-wrap: wrap;
+
+        &__title {
+            font-size: 18px;
+        }
+
+        &__location {
+            font-size: 14px;
+        }
+
+        &__tag {
+            font-size: 10px;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        &__second {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        &__host {
+            justify-content: flex-end;
+            width: 100px;
+        }
+
+        &__host-name {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        &__host-img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    .droplist-container {
         flex-direction: column;
         padding: 10px 0;
         gap: 0;
-    }    
+    }
 }

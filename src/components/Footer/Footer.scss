@@ -1,28 +1,26 @@
+@use '/src/styles/mixins.scss' as *;
+
 .footer{
     display: flex;
     flex-direction: column;
     background-color: black;
-    color: white;
     height: 209px;
-    min-width: 100%;
-    img {
+    
+    &__logo{
         align-self: center;
         width: 122px;
         height: 39px;
         margin: 66px 0px 20px;
     };
 
-    p{
+    &__text{
+        @include text-style(24px, 500, white);
         align-self: center;
-        font-family: 'Montserrat';
-        font-size: 24px;
-        font-weight: 500;
-    }
-    @media (max-width: 767px) {
-        p{
-            font-size: 12px;
-            width: 133px;
-            text-align: center;
+
+        @media (max-width: 767px) {
+                font-size: 12px;
+                width: 133px;
+                text-align: center;
         }
-    }
+    }   
 }

@@ -1,4 +1,3 @@
-import './Home.scss'
 import Banner from "../../components/Banner";
 import ItemCardList from "../../components/ItemCardList/index.jsx";
 

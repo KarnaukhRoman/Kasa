@@ -1,4 +1,19 @@
+@use '/src/styles/variables.scss' as *;
+@use 'components/Header/Header.scss';
+@use 'components/Banner/Banner.scss';
+@use 'components/Carousel/Carousel.scss';
+@use 'components/ComboBox/Combobox.scss';
+@use 'components/Footer/Footer.scss';
+@use 'components/ItemCardList/ItemCardList.scss';
+@use 'components/Rating/Rating.scss';
+
+@use 'pages/About/About.scss';
+@use 'pages/Home/Home.scss';
+@use 'pages/Logement/Logement.scss';
+@use 'pages/Page404/Page404.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 *{
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -14,12 +29,9 @@ main {
 
 #root {
   width: 100%;
-  // max-width: 1440px;
   box-sizing: border-box;
 }
  @media (max-width: 767px) {
-    
-
      main {
       padding: 0 15px;
     }

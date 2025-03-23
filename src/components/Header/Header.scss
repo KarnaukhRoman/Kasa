@@ -1,44 +1,46 @@
-.kasa-header{
+@use '/src/styles/mixins.scss' as *;
+
+.header{
     display: flex;
-    justify-content: flex-start;
     margin: 40px 0;
     padding: 0 50px;
-    .logo {
+    
+    &__logo {
         width: 210px;
         height: 68px;
     }
 
-    .kasa-navigation{
+    &__navbar{
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
     }
-    .nav-links{
+
+    &__navbar-links{
         display: flex;
-        font-family: 'Montserrat';
-        font-weight: 500;
-        font-size: 24px;
         gap: 60px;
     }
 
-    .nav-links .link{
+    &__link{
+        @include text-style(24px, 500, black);
         text-decoration: none;
-        color: black;
+
+        &:hover{
+            text-decoration: underline;
+        }
     }
 
-    .nav-links .link:hover{
-        text-decoration: underline;
-    }
 
     @media (max-width: 768px){
         padding: 0 15px;
         margin: 15px 0;
-        .logo {
+        
+        .header__logo {
             width: 145px;
             height: 47px;
         }
-        .nav-links{
+        .header__navbar-links{
             font-size: 12px;
             text-transform: uppercase;
             gap: 30px;

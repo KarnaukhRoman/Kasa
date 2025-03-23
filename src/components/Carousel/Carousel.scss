@@ -1,10 +1,11 @@
+@use '/src/styles/mixins.scss' as *;
 .carousel{
     position: relative;
     height: 415px;
     width: 100%;
     margin: 20px 0;
 
-    button{
+    &__button{
         position: absolute;
         top: 40%;
         z-index: 1;
@@ -12,40 +13,41 @@
         cursor: pointer;
         border: none;
         background: none;
-        i{
-            font-size: 36px;
-            color: white;
-        }   
-    }
-    .right{
-        right: 0;
+
+        &-icon {
+            @include text-style(80px, 700, white);
+        }
+        &--left{
+            left: 0;
+        }
+        &--right{
+            right: 0;
+        }
     }
     
-    img{
+    
+    &__image{
         height: 100%;
         width: 100%;
         object-fit: cover;
         border-radius: 25px;
     }
-    .counter{
-        color: white;
+    &__counter{
+        @include text-style(24px, 500, white);
         position: absolute;
         bottom: 20px;
         right: 50%;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 500;
-        font-size: 24px;
     }
 
     @media (max-width:767px) {
         height: 255px;
-        .counter{
+        .carousel__counter{
             display: none;
         }
-        button i{
+        .carousel__button-icon{
             font-size: 24px;
         }
-        img{
+        .carousel__image{
             border-radius: 10px;
         }
 

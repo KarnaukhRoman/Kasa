@@ -1,4 +1,3 @@
-import './Rating.scss';
 function Rating({rating, maxRating=5}){
     const starStyle = (index) => ({
         color: index < rating ? "#FF6060" : "#E3E3E3",

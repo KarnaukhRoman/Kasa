@@ -1,80 +1,80 @@
-.accordion {
+@use '../../styles/variables.scss' as *;
+@use '/src/styles/mixins.scss' as *;
+
+.combobox {
     overflow: hidden;
     width: 100%;
     margin: 10px 0;
   
-    .accordion-header {
-      background-color: rgba(255, 96, 96, 1);
+    &__header {
+      background-color: $main-color;
       border: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
       border-radius: 5px;
       width: 100%;
       padding: 15px;
-      font-size: 18px;
-      font-weight: 700;
-      font-family: 'Montserrat';
-      cursor: pointer;
-      text-align: left;
-      outline: none;       
+      @include text-style(18px, 700, white);
+      cursor: pointer;   
       user-select: none; 
       -webkit-tap-highlight-color: transparent;
     }
   
-    .arrow {
-      transition: transform 0.3s ease-in-out;
-      width: 24px;
-      height: 24px;
-    }
-  
-    .arrow.open {
-      transform: rotate(180deg);
-    }
-  
-    .accordion-content {
+    &__arrow {
+        transition: transform 0.3s ease-in-out;
+        width: 24px;
+        height: 24px;
+
+        &--open {
+          transform: rotate(180deg);
+        }
+      }
+    
+    &__content {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
       padding: 0 15px;
       background: rgba(246, 246, 246, 0.45);
-      font-family: 'Montserrat';
-      font-size: 18px;
-      font-weight: 400;
+      @include text-style(18px, 400, black);
       line-height: 1.5em;
+
+      &--open {
+        max-height: 200px;
+        padding: 15px;
+        
+      }
     }
-  
-    .accordion-content.open {
-      max-height: 200px; // Підлаштуйте під ваш контент
-      padding: 15px;
-      
-    }
-    .no-bullets{
-      list-style-type: none;
+ 
+    &__list{
       padding: 0;
       margin: 0;
+
+      &--no-bullets{
+        list-style-type: none;
+      }
     }
 
     @media (max-width: 768px) {
-      .accordion-header {
+      &__header {
         font-size: 13px;
         padding: 12px;
       }
   
-      .arrow {
+      &__arrow {
         width: 16px;
         height: 16px;
       }
   
-      .accordion-content {
+      &__content {
         font-size: 13px;
         padding: 0 12px;
         line-height: 1.5em;
-      }
-  
-      .accordion-content.open {
-        padding: 12px;
+
+        &--open {
+          padding: 12px;
+        }
       }
   }
 }

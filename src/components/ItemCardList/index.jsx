@@ -1,6 +1,4 @@
-import './ItemCardList.scss'
 import { NavLink } from "react-router-dom";
-// import logementList from '../../database/logements.json'
 import useFetch from '../../hooks/usefetch.jsx';
 
 function ItemCardList(){
@@ -12,10 +10,10 @@ function ItemCardList(){
     return (
         <div className="hebergements-cards">
             {data.map((card)=>(
-                <article className="card" key={card.id}>
+                <article className="hebergements-cards__card" key={card.id}>
                     <NavLink to={`/logement/${card.id}`}>
-                    <img src={card.cover} alt={card.title} />
-                    <p>{card.title}</p>
+                    <img src={card.cover} alt={card.title} className="hebergements-cards__image"/>
+                    <p className="hebergements-cards__title">{card.title}</p>
                     </NavLink>
                 </article>
             ))}

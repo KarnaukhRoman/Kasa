@@ -1,37 +1,31 @@
-.kasa-banner{
+@use '/src/styles/mixins.scss' as *;
+.banner{
     display: flex;
-    justify-content: center;
     height: 223px;
     width: 100%;
-    border: 1px solid black;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
     overflow: hidden;
     position: relative;
     
-    img{
+    &__image{
         width: 100%;
         object-fit: cover;
         filter: brightness(0.6);
     }
-    p {
+    &__text {
         position: absolute;
-        top: 35%; /* розміщує текст по вертикалі по центру */
-        left: 2%; /* розміщує текст по горизонталі по центру */
-        // transform: translate(-50%, -50%); /* центрує текст точно по центру */
-        color: white; /* колір тексту */
-        font-size: 48px; /* розмір тексту */
-        font-family: 'Montserrat', sans-serif;;
-        font-weight: 700; /* жирний текст */
+        top: 35%; 
+        left: 2%; 
+        @include text-style(48px, 700, white);
         text-align: center;
         width: 100%;
-        margin: 0; /* щоб уникнути зайвих відступів */
     }
 
     @media (max-width: 768px) {
         height: 110px;
         border-radius: 10px;
-        p{
+        &__text{
             top: 25%;
             left: 1%;
             font-size: 24px;
@@ -39,7 +33,6 @@
             margin-left: 20px;
             margin-right: 20px;
             width: 225px;
-            
         }
     }
 

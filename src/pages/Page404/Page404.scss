@@ -1,43 +1,43 @@
+@use '/src/styles/variables.scss' as *;
+@use '/src/styles/mixins.scss' as *;
+
 .page-error {
     display: flex;
     flex-direction: column;
-    font-family: 'Montserrat';
-    color: rgba(255, 96, 96, 1);
+    color: $main-color;
 
-    .error404{
+    &__code{
+        @include text-style(288px, 700, $main-color);
         align-self: center;
-        font-weight: 700;
-        font-size: 288px;
         margin: 60px 0;
     }
-    .error-text {
-        font-weight: 500;
-        font-size: 32px;
+    &__text {
+        @include text-style(36px, 500, $main-color);
         text-align: center;
         margin: 0 0 80px 0px;
-        /* margin-top: 10px; */
     }
-    .return-text {
+    &__link {
+        @include text-style(18px, 500, black);
         align-self: center;
-        font-weight: 500;
-        font-size: 18px;
-        color: black;
         margin: 60px 0px;
         cursor: pointer;
     }
+
     @media (max-width: 767px) {
-        .error404{
+        &__code {
             font-size: 96px;
             margin: 60px 0;
         }
-        .error-text {
+
+        &__text {
             align-self: center;
             font-size: 18px;
             width: 265px;
             text-align: center;
             margin: 0 0 80px 0px;
         }
-        .return-text {
+
+        &__link {
             font-size: 14px;
             margin: 0 0 80px 0px;
         }

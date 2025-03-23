@@ -1,9 +1,8 @@
-import './Footer.scss'
 function Footer(){
     return (
         <footer className="footer">
-            <img src="/src/assets/logo_footer.svg" alt="" />
-            <p>{"\u00A9"} 2020 Kasa. All rights reserved</p>
+            <img className="footer__logo"src="/src/assets/logo_footer.svg" alt="" />
+            <p className="footer__text">{"\u00A9"} 2020 Kasa. All rights reserved</p>
         </footer>
     )
 }

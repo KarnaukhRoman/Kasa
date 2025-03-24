@@ -6,7 +6,7 @@ function useFetch (url, options = {}){
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    let isMounted = true; // Щоб уникнути оновлення стану після розмонтування
+    let isMounted = true;
 
     const fetchData = async () => {
       try {
@@ -32,7 +32,7 @@ function useFetch (url, options = {}){
     return () => {
       isMounted = false;
     };
-  }, [url]); // Виконується щоразу, коли змінюється URL
+  }, [url]);
 
   return { data, loading, error };
 

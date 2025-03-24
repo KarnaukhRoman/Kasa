@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import arrowIcon from '../../assets/arrow.svg'; // Замініть шлях на ваш
+import arrowIcon from '../../assets/arrow.svg';
 
 export default function Accordion({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);

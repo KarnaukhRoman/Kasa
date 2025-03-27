@@ -19,7 +19,7 @@ function Carousel({pictures}) {
             <img className="carousel__image" src={pictures[currentSlide]} alt={`Slide ${currentSlide + 1}`} />
             {pictures.length > 1 && (
                 <button className="carousel__button carousel__button--right" onClick={nextSlide}>
-                    <i class="carousel__button-icon fa-solid fa-chevron-right"></i>
+                    <i className="carousel__button-icon fa-solid fa-chevron-right"></i>
                 </button>)}
             {pictures.length > 1 && <p className="carousel__counter">{currentSlide + 1}/{pictures.length}</p>}
         </section>

@@ -8,7 +8,7 @@ function useFetch (url, options = {}){
   useEffect(() => {
     let isMounted = true;
 
-    const fetchData = async () => {
+    async function fetchData(){
       try {
         const response = await fetch(url, options);
         if (!response.ok) {

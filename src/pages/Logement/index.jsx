@@ -1,13 +1,14 @@
 import { useParams } from "react-router-dom";
-import listObjects from "../../database/logements.json";
 import Carousel from "../../components/Carousel";
 import ComboBox from "../../components/ComboBox";
 import Page404 from "../Page404";
 import Rating from '../../components/Rating';
+import { useLogements } from "../../utils/LogementContext";
 
 function Logement(){
     const { id } = useParams();
-    const logement = listObjects.find((logement) => logement.id === id);
+    const {logements} = useLogements();
+    const logement = logements.find((logement) => logement.id === id);
 
     if (!logement) return <Page404 />;
     

@@ -1,10 +1,9 @@
 import Banner from "../../components/Banner/index.jsx"
 import ComboBox from "../../components/ComboBox/index.jsx";
-import useFetch from "../../hooks/usefetch.jsx";
+import useFetch from "../../utils/hooks";
 
 function Propos(){
     const { data } = useFetch('/src/database/about.json');
-    console.log("From About", data);
     
     return (
         <main>

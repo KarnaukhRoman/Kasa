@@ -1,15 +1,15 @@
 import { NavLink } from "react-router-dom";
-import useFetch from '../../hooks/usefetch.jsx';
+import { useLogements } from "../../utils/LogementContext";
 
 function ItemCardList(){
     //
-    const { data } = useFetch("/src/database/logements.json");
-    console.log("ListItems", data);
+    const { logements } = useLogements();
+    if (!logements) return <span>Ooops, data is not exist</span>
     
     //
     return (
         <div className="hebergements-cards">
-            {data.map((card)=>(
+            {logements.map((card)=>(
                 <article className="hebergements-cards__card" key={card.id}>
                     <NavLink to={`/logement/${card.id}`}>
                     <img src={card.cover} alt={card.title} className="hebergements-cards__image"/>

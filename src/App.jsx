@@ -6,11 +6,12 @@ import Home from './pages/Home'
 import Logement from './pages/Logement'
 import Page404 from './pages/Page404'
 import About from './pages/About'
+import { LogementProvider } from "./utils/LogementContext";
 
 
 function App() {
   return (
-    <>
+    <LogementProvider>
     <Header />
       <Routes>
         <Route path='/' element={<Home />}/>
@@ -19,7 +20,7 @@ function App() {
         <Route path='*' element={<Page404 />} />
       </Routes>
     <Footer />
-    </>
+    </LogementProvider>
   );
 }
 export default App;

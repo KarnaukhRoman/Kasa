@@ -44,6 +44,7 @@
     &__host-name {
         @include text-style(18px, 500, $main-color);
         text-align: right;
+        width: 95px;
     }
 
     &__host-img {

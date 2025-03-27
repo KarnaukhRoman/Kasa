@@ -41,9 +41,11 @@
             height: 47px;
         }
         .header__navbar-links{
-            font-size: 12px;
             text-transform: uppercase;
             gap: 30px;
+        }
+        .header__link{
+            @include text-style(12px, 500, black);
         }
     }
 }
